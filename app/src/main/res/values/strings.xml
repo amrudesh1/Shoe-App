@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash_welcome_text">Welcome</string>
+    <string name="splash_button_text">Proceed</string>
+</resources>
