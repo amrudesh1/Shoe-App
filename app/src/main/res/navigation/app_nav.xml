@@ -13,9 +13,20 @@
         <action
             android:id="@+id/action_login_to_splash"
             app:destination="@id/splash" />
+        <action
+            android:id="@+id/action_login_to_signUp"
+            app:destination="@id/signUp" />
     </fragment>
     <fragment
         android:id="@+id/splash"
         android:name="com.udacity.shoestore.ui.welcome.Welcome"
         android:label="Splash" />
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.udacity.shoestore.ui.signup.SignUp"
+        android:label="SignUp" >
+        <action
+            android:id="@+id/action_signUp_to_login"
+            app:destination="@id/login" />
+    </fragment>
 </navigation>

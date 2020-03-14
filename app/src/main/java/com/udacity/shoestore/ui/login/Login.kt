@@ -13,6 +13,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 
 import com.udacity.shoestore.R
+import com.udacity.shoestore.data.local.prefs.LoginPrefs
 import com.udacity.shoestore.data.local.prefs.UserPrefrence
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 
@@ -21,6 +22,7 @@ class Login : Fragment() {
     lateinit var loginBinding: FragmentLoginBinding
     lateinit var prefs: UserPrefrence
     lateinit var navController: NavController
+    lateinit var loginPrefs: LoginPrefs
 
 
     override fun onCreateView(
@@ -35,6 +37,7 @@ class Login : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         prefs = UserPrefrence(activity!!.applicationContext)
+        loginPrefs = LoginPrefs(activity!!.applicationContext)
         navController = Navigation.findNavController(loginBinding.root)
         initClickListeners()
 
@@ -44,21 +47,33 @@ class Login : Fragment() {
     fun initClickListeners() {
         loginBinding.signInButton.setOnClickListener {
             if (verifyData()) {
-                prefs.setName(loginBinding.usernameLayout.text.toString())
-                prefs.setPassword(loginBinding.userPasswordLayout.text.toString())
-                prefs.SET_LOGGED_IN(true)
-                navController.navigate(
-                    R.id.splash, null,
-                    NavOptions.Builder().setPopUpTo(R.id.login, true).build()
-                )
+                if (loginPrefs.isUserAuthenticated(
+                        loginBinding.usernameLayout.text.toString()
+                        , loginBinding.userPasswordLayout.text.toString()
+                    )
+                ) {
+                    prefs.setName(loginBinding.usernameLayout.text.toString())
+                    prefs.setPassword(loginBinding.userPasswordLayout.text.toString())
+                    prefs.SET_LOGGED_IN(true)
+                    navController.navigate(
+                        R.id.splash, null,
+                        NavOptions.Builder().setPopUpTo(R.id.login, true).build()
+                    )
+                } else {
+                    Toast.makeText(activity, "Please Check Username or Password", Toast.LENGTH_LONG)
+                        .show()
+                }
 
             } else {
-                Toast.makeText(activity, "Please enter Credentials", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, "Please Check Username or Password", Toast.LENGTH_LONG)
+                    .show()
             }
         }
 
         loginBinding.createAccount.setOnClickListener {
-            Toast.makeText(activity, "Coming Soon", Toast.LENGTH_LONG).show()
+            navController.navigate(
+                R.id.signUp
+            )
 
         }
     }
