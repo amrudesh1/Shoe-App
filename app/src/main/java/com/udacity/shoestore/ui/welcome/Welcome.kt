@@ -43,7 +43,7 @@ class Welcome : Fragment() {
         splashBinding.splashProceedButton.setOnClickListener {
             navController.navigate(
                 R.id.instructions, null,
-                NavOptions.Builder().setPopUpTo(R.id.signUp, true).build()
+                NavOptions.Builder().setPopUpTo(R.id.splash, true).build()
             )
         }
     }

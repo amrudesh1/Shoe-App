@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cardview_dark_background"
+            android:orientation="vertical"
+            tools:context=".ui.addShoe.AddShoe">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoeName_textInput"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/standard_55"
+                android:layout_below="@id/app_heading"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/editext_rounded"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:textColorHint="@color/transparentColorPrimary"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/shoe_name_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/standard_55"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@null"
+                    android:hint="Shoe Name "
+                    android:singleLine="true"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoe_size_textInput"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/standard_55"
+                android:layout_below="@id/app_heading"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/editext_rounded"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:textColorHint="@color/transparentColorPrimary"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/shoe_size_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/standard_55"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@null"
+                    android:hint="Shoe Size"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoe_brand_textInput"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/standard_55"
+                android:layout_below="@id/app_heading"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/editext_rounded"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:textColorHint="@color/transparentColorPrimary"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/shoe_brand_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/standard_55"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@null"
+                    android:hint="Shoe Brand"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoe_description_textInput"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/app_heading"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/editext_rounded"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:textColorHint="@color/transparentColorPrimary"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/shoe_description_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="Shoe Description"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/add_shoe_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/button_background"
+            android:text="Add Shoe"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color_white" />
+    </RelativeLayout>
+</layout>
