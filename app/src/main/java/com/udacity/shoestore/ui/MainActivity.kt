@@ -2,6 +2,7 @@ package com.udacity.shoestore.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -33,12 +34,13 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
 
+
+
         if (prefs.IS_LOGGED_IN()) {
             navController.navigate(
-                R.id.splash
+                R.id.splash, null, NavOptions.Builder().setPopUpTo(R.id.login, true).build()
             )
         }
-
         Timber.plant(Timber.DebugTree())
     }
 }

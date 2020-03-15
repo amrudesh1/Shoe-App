@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/login"
         android:name="com.udacity.shoestore.ui.login.Login"
-        android:label="fragment_login"
+        android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_login_to_splash"
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/splash"
         android:name="com.udacity.shoestore.ui.welcome.Welcome"
-        android:label="Splash">
+        android:label="Welcome">
         <action
             android:id="@+id/action_splash_to_instructions"
             app:destination="@id/instructions" />
@@ -36,7 +36,7 @@
     <fragment
         android:id="@+id/instructions"
         android:name="com.udacity.shoestore.ui.instructions.Instructions"
-        android:label="fragment_instructions"
+        android:label="Instructions"
         tools:layout="@layout/fragment_instructions" >
         <action
             android:id="@+id/action_instructions_to_shoeFragment"
@@ -45,17 +45,24 @@
     <fragment
         android:id="@+id/shoeFragment"
         android:name="com.udacity.shoestore.ui.shoe.ShoeFragment"
-        android:label="ShoeFragment" >
+        android:label="Shoe Listing" >
         <action
             android:id="@+id/action_shoeFragment_to_addShoe"
             app:destination="@id/addShoe" />
+        <action
+            android:id="@+id/action_shoeFragment_to_shoeDetailFragment"
+            app:destination="@id/shoeDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/addShoe"
         android:name="com.udacity.shoestore.ui.addShoe.AddShoe"
-        android:label="AddShoe" >
+        android:label="Add Shoe" >
         <action
             android:id="@+id/action_addShoe_to_shoeFragment"
             app:destination="@id/shoeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/shoeDetailFragment"
+        android:name="com.udacity.shoestore.ui.shoeDetail.ShoeDetailFragment"
+        android:label="Shoe Detail" />
 </navigation>
