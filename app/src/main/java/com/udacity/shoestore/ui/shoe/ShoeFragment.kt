@@ -55,11 +55,16 @@ class ShoeFragment : Fragment() {
         val inflater = LayoutInflater.from(activity)
         val view: View =
             inflater.inflate(R.layout.shoe_item, shoeBinding.mainView, false)
-        view.findViewById<TextView>(R.id.shoe_name).text = "Shoe Name" + " " + shoeData.name
+        view.findViewById<TextView>(R.id.shoe_name).text = shoeData.name
         view.findViewById<TextView>(R.id.shoe_size).text =
-            "Shoe Size" + " " + shoeData.size.toString()
-        view.findViewById<TextView>(R.id.shoe_brand).text = "Brand" + " " + shoeData.company
+            "Shoe Size:" + " " + shoeData.size.toString()
+        view.findViewById<TextView>(R.id.shoe_brand).text = "Brand:" + " " + shoeData.company
         view.findViewById<TextView>(R.id.shoe_description).text = shoeData.description
+        view.setOnClickListener {
+            val bundle: Bundle = Bundle()
+            bundle.putParcelable("shoe", shoeData)
+            navController.navigate(R.id.shoeDetailFragment, bundle)
+        }
         return view
 
     }

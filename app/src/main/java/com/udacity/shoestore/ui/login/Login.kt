@@ -57,8 +57,7 @@ class Login : Fragment() {
                     prefs.setPassword(loginBinding.userPasswordLayout.text.toString())
                     prefs.SET_LOGGED_IN(true)
                     navController.navigate(
-                        R.id.splash, null,
-                        NavOptions.Builder().setPopUpTo(R.id.login, true).build()
+                        R.id.splash, null, NavOptions.Builder().setPopUpTo(R.id.login, true).build()
                     )
                 } else {
                     Toast.makeText(activity, "Please Check Username or Password", Toast.LENGTH_LONG)
