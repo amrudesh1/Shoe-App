@@ -20,13 +20,22 @@
     <fragment
         android:id="@+id/splash"
         android:name="com.udacity.shoestore.ui.welcome.Welcome"
-        android:label="Splash" />
+        android:label="Splash">
+        <action
+            android:id="@+id/action_splash_to_instructions"
+            app:destination="@id/instructions" />
+    </fragment>
     <fragment
         android:id="@+id/signUp"
         android:name="com.udacity.shoestore.ui.signup.SignUp"
-        android:label="SignUp" >
+        android:label="SignUp">
         <action
             android:id="@+id/action_signUp_to_login"
             app:destination="@id/login" />
     </fragment>
+    <fragment
+        android:id="@+id/instructions"
+        android:name="com.udacity.shoestore.ui.instructions.Instructions"
+        android:label="fragment_instructions"
+        tools:layout="@layout/fragment_instructions" />
 </navigation>

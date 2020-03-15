@@ -53,6 +53,7 @@ class Login : Fragment() {
                     )
                 ) {
                     prefs.setName(loginBinding.usernameLayout.text.toString())
+                    prefs.setUserName(loginBinding.usernameLayout.text.toString())
                     prefs.setPassword(loginBinding.userPasswordLayout.text.toString())
                     prefs.SET_LOGGED_IN(true)
                     navController.navigate(

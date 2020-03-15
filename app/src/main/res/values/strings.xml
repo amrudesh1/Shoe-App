@@ -5,4 +5,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="splash_welcome_text">Welcome</string>
     <string name="splash_button_text">Proceed</string>
+    <string name="instructions">Instructions</string>
+    <string name="ins_1">1. Add new shoes by pressing on the + Button</string>
+    <string name="ins_2">2. View Shoe Details By Tapping on the shoe</string>
 </resources>
