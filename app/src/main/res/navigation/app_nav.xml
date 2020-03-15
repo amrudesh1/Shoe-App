@@ -37,5 +37,25 @@
         android:id="@+id/instructions"
         android:name="com.udacity.shoestore.ui.instructions.Instructions"
         android:label="fragment_instructions"
-        tools:layout="@layout/fragment_instructions" />
+        tools:layout="@layout/fragment_instructions" >
+        <action
+            android:id="@+id/action_instructions_to_shoeFragment"
+            app:destination="@id/shoeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeFragment"
+        android:name="com.udacity.shoestore.ui.shoe.ShoeFragment"
+        android:label="ShoeFragment" >
+        <action
+            android:id="@+id/action_shoeFragment_to_addShoe"
+            app:destination="@id/addShoe" />
+    </fragment>
+    <fragment
+        android:id="@+id/addShoe"
+        android:name="com.udacity.shoestore.ui.addShoe.AddShoe"
+        android:label="AddShoe" >
+        <action
+            android:id="@+id/action_addShoe_to_shoeFragment"
+            app:destination="@id/shoeFragment" />
+    </fragment>
 </navigation>
