@@ -12,6 +12,7 @@ class UserPrefrence constructor(context: Context) {
         const val USER_NAME = "USER_NAME"
         const val PASSWORD = "USER_PASSWORD"
         const val IS_LOGGED_IN = "IS_LOGGED_IN"
+        const val ONBOARDING = "ONBOARDING"
     }
 
     fun getUserName(): String {
@@ -44,6 +45,14 @@ class UserPrefrence constructor(context: Context) {
 
     fun setName(name: String) {
         appPrefs.edit().putString(NAME, name).apply()
+    }
+
+    fun setOnBoardingScreenStatus(status: Boolean) {
+        appPrefs.edit().putBoolean(ONBOARDING, status).apply()
+    }
+
+    fun getOnBoardingScreenStatus(): Boolean {
+        return appPrefs.getBoolean(ONBOARDING, false)
     }
 
 }
